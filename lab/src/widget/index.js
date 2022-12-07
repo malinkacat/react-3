@@ -2,7 +2,6 @@ import React, { useEffect, useState} from "react";
 import "./style.css";
 import weatherMock from './mock.json';
 import axios from 'axios';
-import { Bars } from "react-loader-spinner";
 import icon from "./imgs/geo-alt-fill.svg"
 
 function Widget (props) {
@@ -24,11 +23,11 @@ function Widget (props) {
               break;
             }
             case 404: {
-              alert("You set wrong city name");
+              alert("You entered wrong city!");
               break;
             }
             case 429: {
-              alert("Too many request per second");
+              alert("Too many request per second!");
               break;
             }
             default: { 
@@ -37,10 +36,8 @@ function Widget (props) {
           }
         });
     }, [props.city]);
-    
+
     return(
-      // !isLoad
-      // ? <Bars />
         <div className="widget">
 
           <div className="greeting-container">
@@ -84,6 +81,21 @@ function Widget (props) {
               </div>
 
               <div className="info-title">More</div>
+
+              <div className="more-info-container">
+                <div id="subcontainer">
+                  <div className="info-subtitle">Wind</div>
+                  <div id="info-text">Speed: {Weatherdata.wind.speed}m/s</div>
+                  <div id="info-text">Direction: {Weatherdata.wind.deg}°</div>
+                  <div id="info-text">Gust: {Weatherdata.wind.gust}m/s</div>
+                </div>
+
+                <div id="subcontainer">
+                  <div className="info-subtitle">Other</div>
+                  <div id="info-text">Cloudiness: {Weatherdata.clouds.all}%</div>
+                  <div id="info-text">Visibility: {Weatherdata.visibility}m</div>
+                </div>
+              </div>
             
         </div>
       </div>

@@ -20,9 +20,9 @@
     align-items: center;
     color: white;
     box-sizing: border-box;
-    width: 200px;
+    width: 250px;
     height: 75px;
-    border-radius: 20px;
+    border-radius: 40px;
   }
 
   #location-tag div {
@@ -71,8 +71,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 700px;
+    width: 750px;
+    height: 750px;
   }
 
   .info-container {
@@ -89,7 +89,23 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 20px 0;
+    margin: 15px 0 25px 0;
+  }
+
+  .more-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    margin: 15px 0 25px 0;
+  }
+
+  #subcontainer {
+    border-radius: 15px;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px rgb(177, 177, 177);
+    display: flex;
+    flex-direction: column;
   }
 
   #temperature {
@@ -134,4 +150,16 @@
   .info-title {
     font-size: 35px;
     font-weight: bolder;
+  }
+
+  .info-subtitle {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+  }
+
+  #info-text {
+    color: #b4b4b4;
+    font-size: 17px;
+    margin: 5px 0;
   }

@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <div className="input-container">
-        <input onBlur={selectCity}/>
+        <input placeholder="Enter city" onBlur={selectCity}/>
       </div>
       <Widget city={selectedCity} />
     </div>

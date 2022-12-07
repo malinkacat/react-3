@@ -13,3 +13,24 @@
   display: flex;
   justify-content: center;
 }
+
+.input-container > input {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 400px;
+  color: white;
+  box-shadow:  0 0 20px #010102;
+}
+
+.input-container > input:focus {
+  outline: none;
+  box-shadow:  0 0 10px #ffffff;
+  transition: 0.3s;
+}
+
+.input-container > input:not(focus) {
+  transition: 0.3s;
+  box-shadow:  0 0 20px #010102;
+}
