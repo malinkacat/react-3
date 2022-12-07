@@ -61,32 +61,31 @@ function Widget (props) {
             <div className="info-container">
 
               <div className="info-title">General Info</div>
+
               <div className="general-info-container">
-                <div>{(Weatherdata.main.temp - 273.15).toFixed(0)}°C</div>
                 <div>
-                  {Weatherdata.weather.map(el => (
-                  <div>
-                  {el.description}
-                  <img src={`http://openweathermap.org/img/w/${el.icon}.png`} alt='' />
-                  </div>
-                  ))}
+                <div id="temperature">{(Weatherdata.main.temp - 273.15).toFixed(0)}°C</div>
+                <div className="img-container">
+                  {Weatherdata.weather.map(el => (<div>{el.description}</div>))}
+                  {Weatherdata.weather.map(el => (<div><img src={`http://openweathermap.org/img/w/${el.icon}.png`} alt='' /></div>))}
                 </div>
+                </div>
+
+                <div id="vertical-hr"></div>
+
+                <div id="info">
+                  <div>Feels Like: {(Weatherdata.main.feels_like - 273.15).toFixed(0)}°C</div>
+                  <div>Humidity: {Weatherdata.main.humidity}%</div>
+                  <div>Pressure: {Weatherdata.main.pressure}hPa</div>
+                  <div>Longitude: {Weatherdata.coord.lon}</div>
+                  <div>Latitude: {Weatherdata.coord.lat}</div>
+                </div>
+                
               </div>
-              <div className="info-subtitle">More</div>
-            <div>City name: {props.city}</div>
-          <div>
-          <div>
-            <div>Longitude: {Weatherdata.coord.lon}</div>
-            <div>Latitude: {Weatherdata.coord.lat}</div>
-          </div>
-          <div className="ww-weather">
+
+              <div className="info-title">More</div>
             
-          </div>
         </div>
-
-        </div>
-
-        
       </div>
     );
 }
