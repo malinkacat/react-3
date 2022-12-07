@@ -59,6 +59,20 @@ function Widget (props) {
           </div>
 
             <div className="info-container">
+
+              <div className="info-title">General Info</div>
+              <div className="general-info-container">
+                <div>{(Weatherdata.main.temp - 273.15).toFixed(0)}°C</div>
+                <div>
+                  {Weatherdata.weather.map(el => (
+                  <div>
+                  {el.description}
+                  <img src={`http://openweathermap.org/img/w/${el.icon}.png`} alt='' />
+                  </div>
+                  ))}
+                </div>
+              </div>
+              <div className="info-subtitle">More</div>
             <div>City name: {props.city}</div>
           <div>
           <div>
@@ -66,12 +80,7 @@ function Widget (props) {
             <div>Latitude: {Weatherdata.coord.lat}</div>
           </div>
           <div className="ww-weather">
-            {Weatherdata.weather.map(el => (
-            <div>
-            <img src={`http://openweathermap.org/img/w/${el.icon}.png`} alt='' />
-            Description: {el.description}
-            </div>
-            ))}
+            
           </div>
         </div>
 
